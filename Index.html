@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TodaArrumada - Links</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- RESET E ESTILOS GERAIS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: #653358; /* Cor de fundo vinho/roxo */
+            color: white;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px; /* Limite de largura estilo mobile */
+            padding: 20px;
+            text-align: center;
+            position: relative;
+        }
+
+        /* --- CABEÇALHO --- */
+        .top-icons {
+            display: flex;
+            justify-content: end;
+            margin-bottom: 20px;
+        }
+
+        .icon-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: background 0.3s;
+        }
+        
+        .icon-btn.dark-mode {
+             background: #dcdcdc;
+             color: #333;
+        }
+
+        .icon-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        .profile-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-img-container {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 15px;
+            border: 2px solid #e85d9e;
+            box-shadow: 0 0 15px rgba(232, 93, 158, 0.5);
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background-color: #333;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #fff;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .bio {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            color: #f0f0f0;
+            padding: 0 10px;
+        }
+
+        .social-row {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .social-row a {
+            color: white;
+            font-size: 1.8rem;
+            text-decoration: none;
+            transition: transform 0.2s;
+        }
+
+        .social-row a:hover {
+            transform: scale(1.1);
+        }
+
+        /* --- LINKS E BOTÕES --- */
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            padding-bottom: 30px;
+        }
+
+        /* Estilo do Card Destaque (WhatsApp) */
+        .card-link {
+            text-decoration: none;
+            border-radius: 25px;
+            overflow: hidden;
+            transition: transform 0.2s;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+        
+        .card-link:hover {
+            transform: scale(1.02);
+        }
+
+        .card-header {
+            background-color: #FFF8F0; /* Fundo creme */
+            padding: 30px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .whatsapp-large-icon {
+            color: #25D366;
+            font-size: 4rem;
+            margin-bottom: 10px;
+        }
+        
+        .whatsapp-text-img {
+            color: #25D366;
+            font-size: 2.5rem;
+            font-weight: bold;
+            font-family: sans-serif;
+        }
+
+        .card-footer {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            font-weight: 500;
+        }
+
+        /* Estilo dos Botões Padrão */
+        .btn-link {
+            text-decoration: none;
+            background-color: transparent;
+            border: 1px solid rgba(255,255,255,0.5);
+            padding: 18px 20px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            color: white;
+            transition: background 0.2s;
+            position: relative;
+        }
+
+        .btn-link:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
+        .btn-icon {
+            font-size: 1.8rem;
+            margin-right: 15px;
+            width: 30px;
+            text-align: center;
+        }
+        
+        .insta-gradient {
+            background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .map-simple { color: #EA4335; } 
+
+        .btn-text {
+            flex-grow: 1;
+            text-align: center;
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        .btn-options {
+            color: rgba(255,255,255,0.6);
+            font-size: 1.2rem;
+            position: absolute;
+            right: 20px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="top-icons">
+            <button class="icon-btn dark-mode" onclick="shareProfile()">
+                <i class="fa-solid fa-arrow-up-from-bracket"></i>
+            </button>
+        </div>
+
+        <div class="profile-section">
+            <div class="profile-img-container">
+                <img src="https://ui-avatars.com/api/?name=Toda+Arrumada&background=d6249f&color=fff&size=200" alt="Logo TodaArrumada" class="profile-img">
+            </div>
+            
+            <h1>TodaArrumada</h1>
+            
+            <p class="bio">
+                ❤️ | Moda feminina versátil para o dia a dia ✨ | Looks estilosos e acessíveis 👗 | <br>
+                Roupas que te deixam TodArrumada
+            </p>
+
+            <div class="social-row">
+                <a href="https://wa.me/5581973191903?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20as%20pe%C3%A7as%20dispon%C3%ADveis.%20%F0%9F%98%8A" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://www.instagram.com/todarrumada.store?igsh=eTR1bXI0dG5teHN2" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+        </div>
+
+        <div class="links-container">
+            
+            <a href="https://wa.me/5581973191903?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20as%20pe%C3%A7as%20dispon%C3%ADveis.%20%F0%9F%98%8A" class="card-link" target="_blank">
+                <div class="card-header">
+                    <i class="fa-brands fa-whatsapp whatsapp-large-icon"></i>
+                    <div class="whatsapp-text-img">WhatsApp</div>
+                </div>
+                <div class="card-footer">
+                    <span>WhatsApp</span>
+                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                </div>
+            </a>
+
+            <a href="https://www.instagram.com/todarrumada.store?igsh=eTR1bXI0dG5teHN2" class="btn-link" target="_blank">
+                <i class="fa-brands fa-instagram btn-icon insta-gradient"></i>
+                <span class="btn-text">Instagram</span>
+                <i class="fa-solid fa-ellipsis-vertical btn-options"></i>
+            </a>
+
+            <a href="https://share.google/kzGblEb9aRBdfcH3q" class="btn-link" target="_blank">
+                <i class="fa-solid fa-map-location-dot btn-icon map-simple" style="color: #ea4335; background: white; border-radius: 5px; height: 26px; width: 30px; display:flex; align-items:center; justify-content:center;"></i>
+                <span class="btn-text">Nossa localização</span>
+                <i class="fa-solid fa-ellipsis-vertical btn-options"></i>
+            </a>
+
+        </div>
+    </div>
+
+    <script>
+        function shareProfile() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'TodaArrumada',
+                    text: 'Confira os looks da TodaArrumada!',
+                    url: window.location.href,
+                })
+                .then(() => console.log('Compartilhado com sucesso'))
+                .catch((error) => console.log('Erro ao compartilhar', error));
+            } else {
+                alert('Link copiado para a área de transferência!');
+                navigator.clipboard.writeText(window.location.href);
+            }
+        }
+    </script>
+</body>
+</html>
